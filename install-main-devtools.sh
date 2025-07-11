@@ -19,7 +19,11 @@ fi
 # Install CURL / WGET
 echo 'ℹ️ Install "CURL / WGET" command'
 brew install curl
+echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
+echo '✅ Done! Restart your terminal or source your ~/.zshrc to apply alias.'
+curl --version # verify installation
 brew install wget
+wget --version # verify installation
 
 
 
@@ -31,7 +35,7 @@ brew install sevenzip
 # Install p7zip
 echo 'ℹ️ Install p7zip'
 brew install p7zip
-7z -version # verify installation
+7z | head -n 2 # verify installation
 
 
 # Install all git tools
@@ -44,6 +48,7 @@ git --version # verify installation
 # Install git-secrets
 echo 'ℹ️ Install git-secrets'
 brew install git-secrets                                                                              # git hook to check if you are pushing aws secret (https://github.com/awslabs/git-secrets)
+git secrets --version # verify installation
 
 
 
@@ -56,6 +61,7 @@ echo '❇️ Install zsh tools'
 echo 'ℹ️ Install zsh && zsh-completions'
 brew install zsh zsh-completions
 echo '⚙️  Setupping zsh && zsh-completions'
+# Giver rights
 sudo chmod -R 755 /usr/local/share/zsh
 sudo chown -R root:staff /usr/local/share/zsh
 # Add completions into ~/.zshrc
@@ -307,7 +313,7 @@ sudo mv "clo 2" /usr/local/bin/clo2
 echo '4. Check that /usr/local/bin in PATH'
 echo $PATH | grep /usr/local/bin || echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
 echo '5. Restart ~/.zshrc'
-source ~/.zshrc
+echo '✅ Done! Restart your terminal or source your ~/.zshrc to apply alias.'
 echo '6. Upgrading...'
 clo upgrade
 clo2 upgrade
