@@ -5,6 +5,9 @@
 # mkdir -p $INSTALL_FOLDER
 # MAC_SETUP_PROFILE=$INSTALL_FOLDER/macsetup_profile
 
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Install brew command, when needed
 if ! hash brew
 then
@@ -58,9 +61,9 @@ echo '🔷 Install terminal tools'
 # Install all zsh tools
 echo '❇️ Install zsh tools'
 # Install zsh && zsh-completions
-echo 'ℹ️ Install zsh && zsh-completions'
+echo 'ℹ️ Install zsh and zsh-completions'
 brew install zsh zsh-completions
-echo '⚙️  Setupping zsh && zsh-completions'
+echo '⚙️ Setupping zsh and zsh-completions'
 # Giver rights
 sudo chmod -R 755 /usr/local/share/zsh
 sudo chown -R root:staff /usr/local/share/zsh
@@ -225,7 +228,6 @@ echo '❇️ Install all Node tools'
 # Download and install Node.js:
 echo 'ℹ️ Install node'
 brew install node@24
-node -v # Should print "v24.4.0".
 # Verify the Node.js version:
 node -v # Should print "v24.4.0".
 # Verify npm version:
@@ -270,7 +272,7 @@ brew install python@3.13
 echo 'ℹ️ Install pipenv'
 brew install pipenv
 # Download and upgrade setuptools && pip
-echo 'ℹ️ Download and upgrade setuptools && pip'
+echo 'ℹ️ Download and upgrade setuptools and pip'
 pip install --upgrade setuptools
 pip install --upgrade pip
 # Install pyenv
@@ -385,3 +387,5 @@ brew install --cask microsoft-excel
 
 echo '⚙️ Last updating...'
 mas upgrade
+brew update
+brew upgrade
