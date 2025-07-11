@@ -147,6 +147,7 @@ echo '❇️ Install all docker tools'
 echo 'ℹ️ Install "colima" command'
 brew install colima
 colima --version # verify installation
+colima restart # restart to start docker
 
 # Install docker/docker-compose
 echo 'ℹ️ Install "docker/docker-compose" command'
