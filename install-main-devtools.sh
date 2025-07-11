@@ -8,7 +8,7 @@
 # Install brew command, when needed
 if ! hash brew
 then
-    echo 'ℹ️ Install "brew" command'
+    echo 'ℹ️ First install "brew" command'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew update
     brew --version # verify installation
@@ -181,9 +181,15 @@ docker buildx version # verify installation
 
 
 
-# Install chrome
-echo '❇️ Install google chrome browser'
+# Install browsers
+echo '❇️ Install browsers'
+
+# Install google-chrome
+echo 'ℹ️ Install google-chrome'
 brew install --cask google-chrome
+# Install tor
+echo 'ℹ️ Install tor'
+brew install tor
 
 
 
@@ -196,6 +202,10 @@ brew install --cask jetbrains-toolbox
 # Install vscode
 echo 'ℹ️ Install visual-studio-code'
 brew install --cask visual-studio-code
+# Install cursor
+echo 'ℹ️ Install cursor-universal'
+brew tap Scrait/cursor-universal
+brew install --cask cursor-universal
 
 
 
@@ -306,6 +316,9 @@ clo2 --version
 # Install termius
 echo 'ℹ️ Install termius'
 brew install --cask termius
+# Install windows-app
+echo 'ℹ️ Install windows remote desktop'
+brew install --cask windows-app
 
 
 
@@ -331,6 +344,10 @@ echo 'ℹ️ Install discord'
 brew install --cask discord
 echo 'ℹ️ Install Canary Mail'
 mas install 1236045954
+echo 'ℹ️ Install slack'
+brew install --cask slack
+echo 'ℹ️ Install whatsapp'
+brew install --cask whatsapp
 
 echo '❇️ Install antideanon and rkn naeb tools'
 echo 'ℹ️ Install outline-manager'
@@ -346,11 +363,18 @@ echo '❇️ Install Music tools'
 echo 'ℹ️ Install yandex-music'
 brew install --cask yandex-music
 
+echo '❇️ Install Help tools'
+echo 'ℹ️ Install Pasta'
+mas install 1438389787
 
-
+echo '❇️ Install office'
+echo 'ℹ️ Install PowerPoint'
+brew install --cask microsoft-powerpoint
+echo 'ℹ️ Install Word'
+brew install --cask microsoft-word
+echo 'ℹ️ Install Excel'
+brew install --cask microsoft-excel
 
 
 echo '⚙️ Last updating...'
 mas upgrade
-
-https://downloads.cursor.com/production/a8e95743c5268be73767c46944a71f4465d05c90/darwin/universal/Cursor-darwin-universal.dmg
