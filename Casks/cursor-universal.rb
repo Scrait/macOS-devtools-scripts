@@ -10,7 +10,7 @@ cask "cursor-universal" do
 
   livecheck do
     url "https://api2.cursor.sh/updates/api/update/darwin-universal/cursor/0.0.0/"
-    regex(%r{/production/(\h+)/darwin/#{arch}/Cursor[._-]darwin[._-]#{arch}\.zip}i)
+    regex(%r{/production/(\h+)/darwin/universal/Cursor[._-]darwin[._-]universal\.zip}i)
     strategy :json do |json, regex|
       match = json["url"]&.match(regex)
       next if match.blank?
