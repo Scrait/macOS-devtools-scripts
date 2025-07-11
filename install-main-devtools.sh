@@ -397,3 +397,7 @@ echo '⚙️ Last updating...'
 mas upgrade
 brew update
 brew upgrade
+
+
+echo '🧹 Cleaning up Homebrew cache and old versions...'
+brew cleanup
