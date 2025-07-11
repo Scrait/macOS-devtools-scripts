@@ -119,15 +119,23 @@ echo 'Also make sure Alacritty uses the updated config (usually auto-detects ~/.
 
 
 
-# Install SpaceVim
-echo '❇️ Install SpaceVim'
-
+# Install AstroNvim
+echo '❇️ Install AstroNvim'
 # Install neovim
 echo 'ℹ️ Install neovim'
 brew install neovim
-# Install spacevim
-echo 'ℹ️ Install spacevim'
-curl -sLf https://spacevim.org/install.sh | bash
+# Install astronvim
+echo 'ℹ️ Install astronvim'
+# Make a backup of your current nvim config (if exists)
+mv ~/.config/nvim ~/.config/nvim.bak
+# Clean neovim folders (Optional but recommended)
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+# Clone the repository
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+# remove template's git connection to set up your own later
+rm -rf ~/.config/nvim/.git
 nvim --version # verify installation
 
 
