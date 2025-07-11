@@ -197,6 +197,16 @@ ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx
 docker buildx install
 docker buildx version # verify installation
 
+# Install skaffold
+echo 'ℹ️ Install "skaffold" command'
+brew install skaffold
+skaffold version # verify installation
+
+# Install helm
+echo 'ℹ️ Install "helm" command'
+brew install helm
+helm version # verify installation
+
 
 
 # Install browsers
