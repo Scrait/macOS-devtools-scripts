@@ -169,7 +169,7 @@ brew install docker-machine-completion
 
 # Install kubernetes
 echo 'ℹ️ Install "kubectl" command'
-brew install 
+brew install kubectl
 kubectl version # verify installation
 
 # Install kompose
