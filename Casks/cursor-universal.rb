@@ -1,7 +1,7 @@
 cask "cursor-universal" do
   version "1.2.4,2025-07-10,a8e95743c5268be73767c46944a71f4465d05c90"
-  sha256 arm:   "ed0ee60f257b422f0934d6b9a298523c741677b0b9333a33b566910e672f55b1",
-         intel: "ed0ee60f257b422f0934d6b9a298523c741677b0b9333a33b566910e672f55b1"
+  sha256 arm:   "596b139e5a51dfa0b8eb096dae2ab9d630e296bfe2837a948e57a867199580b0",
+         intel: "596b139e5a51dfa0b8eb096dae2ab9d630e296bfe2837a948e57a867199580b0"
 
   url "https://downloads.cursor.com/production/#{version.csv.third}/darwin/universal/Cursor-darwin-universal.dmg"
   name "Cursor"
