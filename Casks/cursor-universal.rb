@@ -1,16 +1,16 @@
 cask "cursor-universal" do
-  version "1.2.4,2025-07-10,a8e95743c5268be73767c46944a71f4465d05c90"
+  version "1.2.4,a8e95743c5268be73767c46944a71f4465d05c90"
   sha256 arm:   "596b139e5a51dfa0b8eb096dae2ab9d630e296bfe2837a948e57a867199580b0",
          intel: "596b139e5a51dfa0b8eb096dae2ab9d630e296bfe2837a948e57a867199580b0"
 
-  url "https://downloads.cursor.com/production/#{version.csv.third}/darwin/universal/Cursor-darwin-universal.dmg"
+  url "https://downloads.cursor.com/production/#{version.csv.second}/darwin/universal/Cursor-darwin-universal.dmg"
   name "Cursor"
   desc "Яджипитуны вперед!!!"
   homepage "https://www.cursor.com/"
 
   livecheck do
     url "https://api2.cursor.sh/updates/api/update/darwin-universal/cursor/0.0.0/"
-    regex(%r{/production/(\h+)/darwin/universal/Cursor[._-]darwin[._-]universal\.dmg}i)
+    regex(%r{/production/(\h+)/darwin/#{arch}/Cursor[._-]darwin[._-]#{arch}\.zip}i)
     strategy :json do |json, regex|
       match = json["url"]&.match(regex)
       next if match.blank?
